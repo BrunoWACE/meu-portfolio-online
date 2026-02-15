@@ -312,24 +312,30 @@ function App() {
             <AboutText>
               {isEnglish ? (
                 <>
-                  I have hands-on experience in developing <strong>responsive websites</strong>,
-                  <strong>landing pages, modern interfaces</strong>, and <strong>process automation</strong>,
-                  always prioritizing usability, performance, and best coding practices. I also work with modern technologies.
+                  Front-End Developer focused on JavaScript and React, working on the creation of modern,
+                  responsive interfaces centered on user experience, combining technology, performance, and visual clarity.
+
+                  I develop front-end applications and institutional websites using React, HTML, CSS, and JavaScript, applying UX/UI principles,
+                  mobile-first design, clean code, and component-based architecture. I have experience as a freelancer, delivering improvements in performance, responsiveness,
+                  and code organization through reusable components and optimized deployment workflows using Git, GitHub, and Netlify.
                 </>
               ) : (
                 <>
-                  Tenho experiência prática no desenvolvimento de <strong>sites responsivos </strong>,
-                  <strong>landing pages, interfaces modernas</strong> e <strong>automação de processos</strong> ,
-                  sempre priorizando usabilidade, performance e boas práticas de código.
+                  Desenvolvedor Front-End com foco em JavaScript e React, atuando na criação de interfaces modernas,
+                  responsivas e centradas na experiência do usuário, unindo tecnologia, performance e clareza visual.
+
+                  Atuo no desenvolvimento de aplicações front-end e sites institucionais utilizando React, HTML, CSS e JavaScript, aplicando princípios de UX/UI,
+                  mobile-first, clean code e componentização. Tenho experiência como freelancer, com melhorias em performance, responsividade e organização do código,
+                  por meio da criação de componentes reutilizáveis e fluxos de deploy otimizados com Git, GitHub e Netlify.
                 </>
               )}
             </AboutText>
 
             <AboutBlock>
               {isEnglish ? (
-                <>Current focus: React, JavaScript, styled-components, AI, n8n, and UI/UX best practices.</>
+                <>Front-End Developer | APIs REST | React | JavaScript | HTML | CSS | UX/UI</>
               ) : (
-                <>Foco atual: React, JavaScript, styled-components, IA, n8n e boas práticas de UI/UX.</>
+                <>Desenvolvedor Front-End | APIs REST | React | JavaScript | HTML | CSS | UX/UI</>
               )}
             </AboutBlock>
 
@@ -363,7 +369,7 @@ function App() {
 
         <TechIntro>
           {isEnglish
-            ? 'The tools that power my projects, reflect my growth, and shape my journey as a web developer.' 
+            ? 'The tools that power my projects, reflect my growth, and shape my journey as a web developer.'
             : 'Ferramentas que impulsionam meus projetos e refletem minha jornada como desenvolvedor.'}
         </TechIntro>
 
