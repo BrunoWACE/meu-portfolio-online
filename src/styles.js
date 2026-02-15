@@ -255,6 +255,11 @@ export const Title = styled.h1`
   font-size: 55px;
   font-weight: 600;
 
+    text-shadow: 
+    0 0 5px rgba(244, 114, 182, 0.25),
+    0 0 10px rgba(168, 85, 247, 0.25),
+    0 0 20px rgba(255, 255, 255, 0.2);
+
   @media (max-width: 900px) {
     font-size: 42px;
   }
@@ -283,6 +288,11 @@ export const SubTitle = styled.h3`
 
   /* 👇 evita que pule quando o texto muda */
   min-height: 1.3em;
+
+      text-shadow: 
+    0 0 5px rgba(244, 114, 182, 0.25),
+    0 0 10px rgba(168, 85, 247, 0.25),
+    0 0 20px rgba(255, 255, 255, 0.2);
 
   @media (max-width: 900px) {
     font-size: 28px;
@@ -480,14 +490,14 @@ export const TechGrid = styled.div`
   justify-items: center;
   margin-bottom: 2rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr); /* 2 colunas no tablet/mobile */
     gap: 1rem; /* espaçamento mais justo */
-    
+    max-width: 300px;
   }
 
   @media (max-width: 480px) {
@@ -662,18 +672,6 @@ export const ProjectCard = styled.article`
     flex: 0 0 85%;
     scroll-snap-align: start;
   }
-
-  @keyframes fadeSlideUp {
-    from {
-      opacity: 0;
-      transform: translateY(25px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
 `;
 
 
@@ -820,7 +818,6 @@ export const ProjectSection = styled.section`
 
      @media (max-width: 900px) {
       background:
-        radial-gradient(750px 600px at 15% 30%, rgba(168, 85, 247, 0.18), transparent 55%),
         radial-gradient(550px 420px at 85% 70%, rgba(71, 129, 255, 0.18), transparent 55%),
         linear-gradient(150deg, #151a33 60%);
   }
@@ -832,6 +829,7 @@ export const ProjectSection = styled.section`
     transform: translateY(16px);
     filter: blur(4px);
   }
+  
 
 &.visible ${ProjectTitle},
 &.visible ${ProjectIntro} {
@@ -853,6 +851,7 @@ export const ProjectSection = styled.section`
 &.visible ${ProjectGrid} > ${ProjectCard}:nth-child(9) { animation-delay: 1.75s; }
 &.visible ${ProjectGrid} > ${ProjectCard}:nth-child(10) { animation-delay: 1.90s; }
  `;
+
 
 /* === CONTATO === */
 // ContactSection: vira coluna e empurra o Footer

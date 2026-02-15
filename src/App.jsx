@@ -312,14 +312,14 @@ function App() {
             <AboutText>
               {isEnglish ? (
                 <>
-                  I have hands-on experience in developing <strong>responsive websites, </strong>
-                  <strong>landing pages</strong>, and <strong>modern interfaces</strong>,
-                  always prioritizing usability, performance, and clean code practices.
+                  I have hands-on experience in developing <strong>responsive websites</strong>,
+                  <strong>landing pages, modern interfaces</strong>, and <strong>process automation</strong>,
+                  always prioritizing usability, performance, and best coding practices. I also work with modern technologies.
                 </>
               ) : (
                 <>
                   Tenho experiência prática no desenvolvimento de <strong>sites responsivos </strong>,
-                  <strong>landing pages</strong> e <strong>interfaces modernas</strong>,
+                  <strong>landing pages, interfaces modernas</strong> e <strong>automação de processos</strong> ,
                   sempre priorizando usabilidade, performance e boas práticas de código.
                 </>
               )}
@@ -363,8 +363,8 @@ function App() {
 
         <TechIntro>
           {isEnglish
-            ? 'The tools that power my projects and reflect my journey as a developer.'
-            : 'As ferramentas que impulsionam meus projetos e refletem minha jornada como desenvolvedor.'}
+            ? 'The tools that power my projects, reflect my growth, and shape my journey as a web developer.' 
+            : 'Ferramentas que impulsionam meus projetos e refletem minha jornada como desenvolvedor.'}
         </TechIntro>
 
 
@@ -420,7 +420,7 @@ function App() {
                 {isEnglish ? (
                   <>
                     This application randomly generates a number with a modern look and responsive design.
-                    It was created to practice and strengthen <strong>JavaScript programming logic</strong>.
+                    It was created to practice and strengthen <strong>Programming logic using JavaScript, CSS3, and HTML5</strong>.
                     More than just a number picker, this project is a hands-on exercise in <strong>logical reasoning</strong> and <strong>DOM manipulation</strong>,
                     developed as part of my studies.
                     <br />
