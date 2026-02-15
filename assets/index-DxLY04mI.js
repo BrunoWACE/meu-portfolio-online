@@ -301,6 +301,11 @@ ul {
   font-size: 55px;
   font-weight: 600;
 
+    text-shadow: 
+    0 0 5px rgba(244, 114, 182, 0.25),
+    0 0 10px rgba(168, 85, 247, 0.25),
+    0 0 20px rgba(255, 255, 255, 0.2);
+
   @media (max-width: 900px) {
     font-size: 42px;
   }
@@ -327,6 +332,11 @@ ul {
 
   /* 👇 evita que pule quando o texto muda */
   min-height: 1.3em;
+
+      text-shadow: 
+    0 0 5px rgba(244, 114, 182, 0.25),
+    0 0 10px rgba(168, 85, 247, 0.25),
+    0 0 20px rgba(255, 255, 255, 0.2);
 
   @media (max-width: 900px) {
     font-size: 28px;
