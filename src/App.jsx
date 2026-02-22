@@ -3,23 +3,52 @@ import {
   AboutSection, AboutInner, AboutTitle, AboutText, AboutPhoto, AboutBlock,
   TechSection, TechTitle, TechIntro, TechGrid, TechCard, OtherTechs,
   ProjectSection, ProjectTitle, ProjectIntro, ProjectGrid,
-  ProjectCard, ProjectThumb, ProjectContent, ProjectTags, CertificateGrid, CertificateCard, CertificateThumb,
-  ProjectButtons, ProjectButton, ContactSection, ContactInner, ContactText, ContactForm, Footer, AnimatedType, Caret
+  ProjectCard, ProjectThumb, ProjectContent, ProjectTags,
+  CertificateGrid, CertificateCard, CertificateThumb,
+  ProjectButtons, ProjectButton, ContactSection, ContactInner,
+  ContactText, ContactForm, Footer, AnimatedType, Caret,
+  Toast, ToastClose
 } from './styles';
+
 import ParticlesBackground from './ParticlesBackground';
-import { IoLanguage } from 'react-icons/io5';
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import useScrollFadeIn from './hooks/useScrollFadeIn';
-import { FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaGitAlt, FaBrain } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { SiStyledcomponents } from "react-icons/si";
-import { FiExternalLink } from "react-icons/fi";
-import { FaDownload } from "react-icons/fa";
-import { useState, useEffect, useCallback } from 'react';
-import { Toast, ToastClose } from './styles';
-import { FiSend } from "react-icons/fi";
-import { FaBars, FaTimes } from 'react-icons/fa';
+
+import { useState, useEffect, useCallback, useMemo } from 'react';
+
+/* ===== React Icons ===== */
+
+// Font Awesome
+import {
+  FaReact,
+  FaCss3Alt,
+  FaHtml5,
+  FaNodeJs,
+  FaGitAlt,
+  FaBrain,
+  FaLinkedin,
+  FaGithub,
+  FaBars,
+  FaTimes,
+  FaDownload
+} from "react-icons/fa";
+
+// Simple Icons (Banco e libs)
+import {
+  SiPostgresql,
+  SiSequelize,
+  SiMongodb,
+  SiMui,
+  SiStyledcomponents
+} from "react-icons/si";
+
+// Ionicons
+import { IoLanguage, IoLogoJavascript } from "react-icons/io5";
+
+// Material Icons
+import { MdEmail } from "react-icons/md";
+
+// Feather Icons
+import { FiExternalLink, FiSend } from "react-icons/fi";
 
 
 
@@ -158,9 +187,11 @@ function App() {
   }, [isEnglish]);
 
   // ANIMAÇÃO INICIO CÓDIGO JS + REACT
-  const roles = isEnglish
-    ? ["Full Stack Developer", "Front-End Developer", "Back-End Developer"]
-    : ["Programador Full Stack", "Programador Front-End", "Programador Back-End"];
+  const roles = useMemo(() => {
+    return isEnglish
+      ? ["Full Stack Developer", "Front-End Developer", "Back-End Developer"]
+      : ["Programador Full Stack", "Programador Front-End", "Programador Back-End"];
+  }, [isEnglish]);
 
 
   const [roleIndex, setRoleIndex] = useState(0);
@@ -296,15 +327,15 @@ function App() {
             <AboutText>
               {isEnglish ? (
                 <>
-                  Hello, I’m <strong>Bruno Alves Ferreira</strong>, a Web Developer focused on Front-End.
-                  I’m currently studying <strong>Systems Analysis and Development</strong> at <strong>Estácio</strong>,
-                  and deepening my skills in <strong>Web Development</strong> through the <strong>DevClub</strong> bootcamp.
+                  Hello, I'm <strong>Bruno Alves Ferreira</strong>, a <strong>Full Stack Developer</strong> focused on JavaScript,
+                  working on building complete applications from <strong>Front-End</strong> to <strong>Back-End</strong>,
+                  with modern, responsive interfaces centered on user experience.
                 </>
               ) : (
                 <>
-                  Olá, sou <strong>Bruno Alves Ferreira</strong>, Desenvolvedor Web com foco em Front-End.
-                  Curso <strong>Análise e Desenvolvimento de Sistemas</strong> pela <strong>Estácio</strong> e me aprofundo em
-                  <strong> Desenvolvimento Web</strong> através do bootcamp - <strong>DevClub</strong>.
+                  Olá, sou <strong>Bruno Alves Ferreira</strong>, <strong>Desenvolvedor Full Stack</strong> com foco em JavaScript,
+                  atuando na construção de aplicações completas do <strong>Front-End</strong> ao <strong>Back-End</strong> com interfaces modernas,
+                  responsivas e centradas na experiência do usuário.
                 </>
               )}
             </AboutText>
@@ -312,30 +343,64 @@ function App() {
             <AboutText>
               {isEnglish ? (
                 <>
-                  Front-End Developer focused on JavaScript and React, working on the creation of modern,
-                  responsive interfaces centered on user experience, combining technology, performance, and visual clarity.
+                  <strong>Front-End</strong>
 
-                  I develop front-end applications and institutional websites using React, HTML, CSS, and JavaScript, applying UX/UI principles,
-                  mobile-first design, clean code, and component-based architecture. I have experience as a freelancer, delivering improvements in performance, responsiveness,
-                  and code organization through reusable components and optimized deployment workflows using Git, GitHub, and Netlify.
+                  <p>
+                    I develop applications and websites using React, HTML, CSS, and JavaScript,
+                    applying UX/UI principles, mobile-first design, clean code practices,
+                    and component-based architecture with and visual clarity.
+                  </p>
+
+                  <strong>Back-End</strong>
+
+                  <p>
+                    I build REST APIs with Node.js, applying layered architecture
+                    and using Sequelize as an ORM for PostgreSQL integration,
+                    as well as MongoDB for non-relational data handling.
+                  </p>
+
+                  <strong>Experience</strong>
+
+                  <p>
+                    I work as a freelancer, delivering improvements in performance,
+                    responsiveness, and maintainability through reusable components
+                    and optimized deployment workflows using Git, GitHub, and Netlify.
+                  </p>
                 </>
               ) : (
                 <>
-                  Desenvolvedor Front-End com foco em JavaScript e React, atuando na criação de interfaces modernas,
-                  responsivas e centradas na experiência do usuário, unindo tecnologia, performance e clareza visual.
+                  <strong>Front-End</strong>
 
-                  Atuo no desenvolvimento de aplicações front-end e sites institucionais utilizando React, HTML, CSS e JavaScript, aplicando princípios de UX/UI,
-                  mobile-first, clean code e componentização. Tenho experiência como freelancer, com melhorias em performance, responsividade e organização do código,
-                  por meio da criação de componentes reutilizáveis e fluxos de deploy otimizados com Git, GitHub e Netlify.
+                  <p>
+                    Desenvolvo aplicações e sites utilizando React, HTML, CSS e JavaScript,
+                    aplicando princípios de UX/UI, mobile-first, clean code e componentização,
+                    com foco em performance, usabilidade e clareza visual.
+                  </p>
+
+                  <strong>Back-End</strong>
+
+                  <p>
+                    Desenvolvo APIs REST com Node.js, aplicando arquitetura em camadas e
+                    utilizando Sequelize como ORM para integração com PostgreSQL,
+                    além de MongoDB para dados não relacionais.
+                  </p>
+
+                  <strong>Experiência</strong>
+
+                  <p>
+                    Atuo como freelancer, promovendo melhorias em performance,
+                    responsividade e manutenção por meio da criação de componentes reutilizáveis
+                    e fluxos de deploy otimizados com Git, GitHub e Netlify.
+                  </p>
                 </>
               )}
             </AboutText>
 
             <AboutBlock>
               {isEnglish ? (
-                <>Front-End Developer | APIs REST | React | JavaScript | HTML | CSS | UX/UI</>
+                <>Full Stack JavaScript Developer | React | Node.js | REST APIs | PostgreSQL | MongoDB</>
               ) : (
-                <>Desenvolvedor Front-End | APIs REST | React | JavaScript | HTML | CSS | UX/UI</>
+                <>Desenvolvedor Full Stack JavaScript | React | Node.js | APIs REST | PostgreSQL | MongoDB</>
               )}
             </AboutBlock>
 
@@ -375,22 +440,51 @@ function App() {
 
 
         <TechGrid>
-          <TechCard><FaReact className="icon react" />React</TechCard>
-          <TechCard><IoLogoJavascript className="icon js" />JavaScript</TechCard>
-          <TechCard><SiStyledcomponents className="icon styled" />Styled Components</TechCard>
-          <TechCard><FaCss3Alt className="icon css" />CSS3</TechCard>
-          <TechCard><FaHtml5 className="icon html" />HTML5</TechCard>
-          <TechCard><FaNodeJs className="icon node" />Node.js</TechCard>
-          <TechCard><FaGitAlt className="icon git" />Git</TechCard>
           <TechCard>
-            <FaBrain className="icon ai" />
+            <FaReact className="icon react" color="#61DAFB" />React
+          </TechCard>
+
+          <TechCard>
+            <IoLogoJavascript className="icon js" color="#F7DF1E" />JavaScript
+          </TechCard>
+
+          <TechCard>
+            <FaNodeJs className="icon node" color="#339933" />Node.js
+          </TechCard>
+
+          <TechCard>
+            <SiPostgresql className="icon postgres" color="#336791" />PostgreSQL
+          </TechCard>
+
+          <TechCard>
+            <SiSequelize className="icon sequelize" color="#52B0E7" />Sequelize
+          </TechCard>
+
+          <TechCard>
+            <SiMongodb className="icon mongodb" color="#47A248" />MongoDB
+          </TechCard>
+
+          <TechCard>
+            <FaHtml5 className="icon html" color="#E34F26" />HTML5
+          </TechCard>
+
+          <TechCard>
+            <FaCss3Alt className="icon css" color="#1572B6" />CSS3
+          </TechCard>
+
+          <TechCard>
+            <SiMui className="icon mui" color="#007FFF" />Material UI
+          </TechCard>
+
+          <TechCard>
+            <FaBrain className="icon ai" color="#8A2BE2" />
             {isEnglish ? 'Artificial Intelligence' : 'Inteligência Artificial'}
           </TechCard>
         </TechGrid>
 
         <OtherTechs>
           <h4>{isEnglish ? 'Other Technologies' : 'Outras Tecnologias'}</h4>
-          <p>Express • Vite • Yarn • Prisma • API REST • JSON • MongoDB • N8N</p>
+          <p>Express • Vite • Yarn • Npm • Pnpm • Prisma • JSON • N8N</p>
         </OtherTechs>
       </TechSection>
 
@@ -416,28 +510,27 @@ function App() {
           <ProjectCard>
             <ProjectThumb
               loading="lazy"
-              src={`${import.meta.env.BASE_URL}ImgSorteadorOnline.png`}
-              alt="Meu Sorteador Online"
+              src={`${import.meta.env.BASE_URL}ImgSiteDeJP.png`}
+              alt="Site - Benkyou Now Online"
             />
 
             <ProjectContent>
-              <h3>{isEnglish ? 'My Online Number Picker' : 'Meu Sorteador Online'}</h3>
+              <h3>Website - Benkyou Now Online</h3>
               <p>
                 {isEnglish ? (
                   <>
-                    This application randomly generates a number with a modern look and responsive design.
-                    It was created to practice and strengthen <strong>Programming logic using JavaScript, CSS3, and HTML5</strong>.
-                    More than just a number picker, this project is a hands-on exercise in <strong>logical reasoning</strong> and <strong>DOM manipulation</strong>,
-                    developed as part of my studies.
+                    Website developed for the language school <strong>Benkyou Now Online</strong>, specialized in teaching the Japanese language.
+                    The project was built with a focus on <strong>performance</strong>, <strong>responsiveness</strong>, and <strong>user experience</strong>.
+                    The platform was integrated with the <strong>Hotmart</strong> payment system, ensuring transaction security and easy access to courses.
                     <br />
                     <br />
+
                   </>
                 ) : (
                   <>
-                    Este aplicativo sorteia um número aleatório com um visual moderno e design responsivo.
-                    Criado com o propósito de praticar e consolidar a <strong>lógica de programação em JavaScript</strong>.
-                    Mais do que um simples sorteador, este projeto é um exercício prático de <strong>raciocínio lógico</strong> e <strong>manipulação de DOM</strong>,
-                    desenvolvido como parte dos meus estudos.
+                    Website desenvolvido para a escola de idiomas <strong>Benkyou Now Online</strong>, especializada no ensino da língua japonesa.
+                    O projeto foi construído com foco em <strong>performance</strong>, <strong>responsividade</strong> e <strong>experiência do usuário</strong>.
+                    A plataforma foi integrada ao sistema de pagamentos da <strong>Hotmart</strong>, garantindo segurança nas transações e facilidade de acesso aos cursos.
                     <br />
                     <br />
                   </>
@@ -446,12 +539,8 @@ function App() {
 
               <ProjectTags>#JavaScript #CSS3 #HTML5</ProjectTags>
               <ProjectButtons>
-                <ProjectButton as="a" href="https://brunowace.github.io/meu-sorteador-online/" target="_blank" rel="noopener noreferrer" title="Meu Sorteador Online">
+                <ProjectButton as="a" href="https://benkyounowonline.com.br" target="_blank" rel="noopener noreferrer" title="Website - Benkyou Now Online">
                   <FiExternalLink /> {isEnglish ? 'View Project' : 'Ver Projeto'}
-
-                </ProjectButton>
-                <ProjectButton as="a" href="https://github.com/BrunoWACE/meu-sorteador-online?tab=readme-ov-file" target="_blank" rel="noopener noreferrer" variant="ghost">
-                  <FaGithub /> {isEnglish ? 'Code' : 'Código'}
 
                 </ProjectButton>
               </ProjectButtons>
@@ -551,27 +640,28 @@ function App() {
           <ProjectCard>
             <ProjectThumb
               loading="lazy"
-              src={`${import.meta.env.BASE_URL}ImgSiteDeJP.png`}
-              alt="Site - Benkyou Now Online"
+              src={`${import.meta.env.BASE_URL}ImgSorteadorOnline.png`}
+              alt="Meu Sorteador Online"
             />
 
             <ProjectContent>
-              <h3>Website - Benkyou Now Online</h3>
+              <h3>{isEnglish ? 'My Online Number Picker' : 'Meu Sorteador Online'}</h3>
               <p>
                 {isEnglish ? (
                   <>
-                    Website developed for the language school <strong>Benkyou Now Online</strong>, specialized in teaching the Japanese language.
-                    The project was built with a focus on <strong>performance</strong>, <strong>responsiveness</strong>, and <strong>user experience</strong>.
-                    The platform was integrated with the <strong>Hotmart</strong> payment system, ensuring transaction security and easy access to courses.
+                    This application randomly generates a number with a modern look and responsive design.
+                    It was created to practice and strengthen <strong>Programming logic using JavaScript, CSS3, and HTML5</strong>.
+                    More than just a number picker, this project is a hands-on exercise in <strong>logical reasoning</strong> and <strong>DOM manipulation</strong>,
+                    developed as part of my studies.
                     <br />
                     <br />
-
                   </>
                 ) : (
                   <>
-                    Website desenvolvido para a escola de idiomas <strong>Benkyou Now Online</strong>, especializada no ensino da língua japonesa.
-                    O projeto foi construído com foco em <strong>performance</strong>, <strong>responsividade</strong> e <strong>experiência do usuário</strong>.
-                    A plataforma foi integrada ao sistema de pagamentos da <strong>Hotmart</strong>, garantindo segurança nas transações e facilidade de acesso aos cursos.
+                    Este aplicativo sorteia um número aleatório com um visual moderno e design responsivo.
+                    Criado com o propósito de praticar e consolidar a <strong>lógica de programação em JavaScript</strong>.
+                    Mais do que um simples sorteador, este projeto é um exercício prático de <strong>raciocínio lógico</strong> e <strong>manipulação de DOM</strong>,
+                    desenvolvido como parte dos meus estudos.
                     <br />
                     <br />
                   </>
@@ -580,13 +670,18 @@ function App() {
 
               <ProjectTags>#JavaScript #CSS3 #HTML5</ProjectTags>
               <ProjectButtons>
-                <ProjectButton as="a" href="https://benkyounowonline.com.br" target="_blank" rel="noopener noreferrer" title="Website - Benkyou Now Online">
+                <ProjectButton as="a" href="https://brunowace.github.io/meu-sorteador-online/" target="_blank" rel="noopener noreferrer" title="Meu Sorteador Online">
                   <FiExternalLink /> {isEnglish ? 'View Project' : 'Ver Projeto'}
+
+                </ProjectButton>
+                <ProjectButton as="a" href="https://github.com/BrunoWACE/meu-sorteador-online?tab=readme-ov-file" target="_blank" rel="noopener noreferrer" variant="ghost">
+                  <FaGithub /> {isEnglish ? 'Code' : 'Código'}
 
                 </ProjectButton>
               </ProjectButtons>
             </ProjectContent>
           </ProjectCard>
+
         </ProjectGrid>
       </ProjectSection>
 
@@ -628,7 +723,7 @@ function App() {
               <ProjectButtons>
                 <ProjectButton
                   as="a"
-                  href="https://aulas.devclub.com.br/verify/7938877997145f50818a0d0c7cde192cc9496890"
+                  href="https://formacoes.devclub.com.br/verify/7938877997145f50818a0d0c7cde192cc9496890"
                   target="_blank"
                   rel="noopener noreferrer"
                   title={isEnglish ? 'View Credential' : 'Exibir Credencial'}
@@ -661,7 +756,7 @@ function App() {
               <ProjectButtons>
                 <ProjectButton
                   as="a"
-                  href="https://aulas.devclub.com.br/verify/8642351e2621dbd2b6035f2ab6fcf9884d12a735"
+                  href="https://formacoes.devclub.com.br/verify/8642351e2621dbd2b6035f2ab6fcf9884d12a735"
                   target="_blank"
                   rel="noopener noreferrer"
                   title={isEnglish ? "View certificate" : "Ver certificado"}
@@ -694,7 +789,7 @@ function App() {
               <ProjectButtons>
                 <ProjectButton
                   as="a"
-                  href="https://aulas.devclub.com.br/verify/c10be78ab5eaf87512ee837d32f71c9c3eaa446f"
+                  href="https://formacoes.devclub.com.br/verify/c10be78ab5eaf87512ee837d32f71c9c3eaa446f"
                   target="_blank"
                   rel="noopener noreferrer"
                   title={isEnglish ? "View certificate" : "Ver certificado"}
@@ -727,7 +822,7 @@ function App() {
               <ProjectButtons>
                 <ProjectButton
                   as="a"
-                  href="https://aulas.devclub.com.br/verify/c53ef755caba1d483f02fc5fa65e9f7e3487fb8c"
+                  href="https://formacoes.devclub.com.br/verify/c53ef755caba1d483f02fc5fa65e9f7e3487fb8c"
                   target="_blank"
                   rel="noopener noreferrer"
                   title={isEnglish ? "View certificate" : "Ver certificado"}
@@ -744,23 +839,23 @@ function App() {
             <CertificateThumb
               loading="lazy"
               src={`${import.meta.env.BASE_URL}05Certificado.png`}
-              alt={isEnglish ? "Certificate - Node" : "Certificado - Node"}
+              alt={isEnglish ? "Certificate - CSS Advanced" : "Certificado - CSS Avançado"}
             />
 
             <ProjectContent>
-              <h3>{isEnglish ? 'Certificate - Node' : 'Certificado - Node'}</h3>
+              <h3>{isEnglish ? 'Certificate - CSS Advanced' : 'Certificado - CSS Avançado'}</h3>
               <br />
               <p>
                 {isEnglish
                   ? <>Issued by <strong>DevClub</strong> • <strong>2025</strong></>
                   : <>Emitido por <strong>DevClub</strong> • <strong>2025</strong></>}
               </p>
-              <ProjectTags>#Node</ProjectTags>
+              <ProjectTags>{isEnglish ? '#CSSAdvanced' : '#CSSAvançado'}</ProjectTags>
 
               <ProjectButtons>
                 <ProjectButton
                   as="a"
-                  href="https://aulas.devclub.com.br/verify/35ed9678beace3ce824db27f8dbccfdd80f8774a"
+                  href="https://formacoes.devclub.com.br/verify/2f6d093f8098a3082b54b6f478058c100e0c38be"
                   target="_blank"
                   rel="noopener noreferrer"
                   title={isEnglish ? "View certificate" : "Ver certificado"}
@@ -777,27 +872,27 @@ function App() {
             <CertificateThumb
               loading="lazy"
               src={`${import.meta.env.BASE_URL}06Certificado.png`}
-              alt={isEnglish ? "Certificate - JavaScript Advanced" : "Certificado - JavaScript Avançado"}
+              alt={isEnglish ? "Certificate - Node" : "Certificado - Node"}
             />
 
             <ProjectContent>
-              <h3>{isEnglish ? 'Certificate - JavaScript Advanced' : 'Certificado - JavaScript Avançado'}</h3>
+              <h3>{isEnglish ? 'Certificate - Node' : 'Certificado - Node'}</h3>
+              <br />
               <p>
                 {isEnglish
                   ? <>Issued by <strong>DevClub</strong> • <strong>2025</strong></>
                   : <>Emitido por <strong>DevClub</strong> • <strong>2025</strong></>}
               </p>
-              <ProjectTags>#JavaScriptAdvanced</ProjectTags>
+              <ProjectTags>#Node</ProjectTags>
 
               <ProjectButtons>
                 <ProjectButton
                   as="a"
-                  href="https://aulas.devclub.com.br/verify/2e0584450983e791a15c9072c67bae7114c6633b"
+                  href="https://formacoes.devclub.com.br/verify/35ed9678beace3ce824db27f8dbccfdd80f8774a"
                   target="_blank"
                   rel="noopener noreferrer"
                   title={isEnglish ? "View certificate" : "Ver certificado"}
                   style={{ fontSize: '1rem', minWidth: '175px' }}
-
                 >
                   <FiExternalLink /> {isEnglish ? 'View Credential' : 'Exibir Credencial'}
                 </ProjectButton>
@@ -810,6 +905,39 @@ function App() {
             <CertificateThumb
               loading="lazy"
               src={`${import.meta.env.BASE_URL}07Certificado.png`}
+              alt={isEnglish ? "Certificate - JavaScript Advanced" : "Certificado - JavaScript Avançado"}
+            />
+
+            <ProjectContent>
+              <h3>{isEnglish ? 'Certificate - JavaScript Advanced' : 'Certificado - JavaScript Avançado'}</h3>
+              <p>
+                {isEnglish
+                  ? <>Issued by <strong>DevClub</strong> • <strong>2025</strong></>
+                  : <>Emitido por <strong>DevClub</strong> • <strong>2025</strong></>}
+              </p>
+              <ProjectTags>{isEnglish ? '#JavaScriptAdvanced' : '#JavaScriptAvançado'}</ProjectTags>
+
+              <ProjectButtons>
+                <ProjectButton
+                  as="a"
+                  href="https://formacoes.devclub.com.br/verify/2e0584450983e791a15c9072c67bae7114c6633b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={isEnglish ? "View certificate" : "Ver certificado"}
+                  style={{ fontSize: '1rem', minWidth: '175px' }}
+
+                >
+                  <FiExternalLink /> {isEnglish ? 'View Credential' : 'Exibir Credencial'}
+                </ProjectButton>
+              </ProjectButtons>
+            </ProjectContent>
+          </CertificateCard>
+
+          {/* Certificado 8 */}
+          <CertificateCard>
+            <CertificateThumb
+              loading="lazy"
+              src={`${import.meta.env.BASE_URL}08Certificado.png`}
               alt={isEnglish ? "Certificate - Project Nike Air" : "Certificado - Projeto Nike Air"}
             />
 
@@ -826,7 +954,7 @@ function App() {
               <ProjectButtons>
                 <ProjectButton
                   as="a"
-                  href="https://aulas.devclub.com.br/verify/970516c7d82dff36c1a082d06bfba500a9b19462"
+                  href="https://formacoes.devclub.com.br/verify/970516c7d82dff36c1a082d06bfba500a9b19462"
                   target="_blank"
                   rel="noopener noreferrer"
                   title={isEnglish ? "View certificate" : "Ver certificado"}
@@ -838,38 +966,7 @@ function App() {
             </ProjectContent>
           </CertificateCard>
 
-          {/* Certificado 8 */}
-          <CertificateCard>
-            <CertificateThumb
-              loading="lazy"
-              src={`${import.meta.env.BASE_URL}08Certificado.png`}
-              alt={isEnglish ? "Certificate - introduction to AI" : "Certificado - Introdução a IA"}
-            />
 
-            <ProjectContent>
-              <h3>{isEnglish ? 'Certificate - introduction to AI' : 'Certificado - Introdução a IA'}</h3>
-              <br />
-              <p>
-                {isEnglish
-                  ? <>Issued by <strong>DevClub</strong> • <strong>2025</strong></>
-                  : <>Emitido por <strong>DevClub</strong> • <strong>2025</strong></>}
-              </p>
-              <ProjectTags>{isEnglish ? '#AI' : '#IA'}</ProjectTags>
-
-              <ProjectButtons>
-                <ProjectButton
-                  as="a"
-                  href="https://aulas.devclub.com.br/verify/d5dbf353df8467cf5017931fcfaa0b658f8fc223"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={isEnglish ? "View certificate" : "Ver certificado"}
-                  style={{ fontSize: '1rem', minWidth: '175px' }}
-                >
-                  <FiExternalLink /> {isEnglish ? 'View Credential' : 'Exibir Credencial'}
-                </ProjectButton>
-              </ProjectButtons>
-            </ProjectContent>
-          </CertificateCard>
 
 
         </CertificateGrid>

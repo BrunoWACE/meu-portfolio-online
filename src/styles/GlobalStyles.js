@@ -19,7 +19,12 @@ git commit -m ""
 git subtree push --prefix dist origin gh-pages
 */
 
+/*
+git add .
+git commit -m "Atualização no portfólio"
+git push origin main
+*/
 
 
- 
-  
+
+

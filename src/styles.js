@@ -485,12 +485,12 @@ export const TechIntro = styled.p`
 
 export const TechGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
+  grid-template-columns: repeat(5, 1fr); /* 4 colunas no desktop */
   gap: 2rem;
   justify-items: center;
   margin-bottom: 2rem;
   width: 100%;
-  max-width: 650px;
+  max-width: 850px;
   margin-left: auto;
   margin-right: auto;
 
@@ -540,6 +540,7 @@ export const TechCard = styled.div`
     transform: translateY(-6px);
     border-color: rgba(255,255,255,0.3);
     background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(168, 85, 247, 0.25);
   }
 
   &:hover .icon {
