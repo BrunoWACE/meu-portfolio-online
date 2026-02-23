@@ -398,9 +398,9 @@ function App() {
 
             <AboutBlock>
               {isEnglish ? (
-                <>Full Stack JavaScript Developer | React | Node.js | REST APIs | PostgreSQL | MongoDB</>
+                <>Full Stack Developer | JavaScript | React | Node.js | APIs REST | PostgreSQL | MongoDB</>
               ) : (
-                <>Desenvolvedor Full Stack JavaScript | React | Node.js | APIs REST | PostgreSQL | MongoDB</>
+                <>Desenvolvedor Full Stack | JavaScript | React | Node.js | APIs REST | PostgreSQL | MongoDB</>
               )}
             </AboutBlock>
 
