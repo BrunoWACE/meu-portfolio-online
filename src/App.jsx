@@ -350,7 +350,7 @@ function App() {
                     applying UX/UI principles, mobile-first design, clean code practices,
                     and component-based architecture with and visual clarity.
                   </p>
-
+                  <br />
                   <strong>Back-End</strong>
 
                   <p>
@@ -358,7 +358,7 @@ function App() {
                     and using Sequelize as an ORM for PostgreSQL integration,
                     as well as MongoDB for non-relational data handling.
                   </p>
-
+                  <br />
                   <strong>Experience</strong>
 
                   <p>
@@ -366,6 +366,8 @@ function App() {
                     responsiveness, and maintainability through reusable components
                     and optimized deployment workflows using Git, GitHub, and Netlify.
                   </p>
+                  <br />
+
                 </>
               ) : (
                 <>
@@ -376,7 +378,7 @@ function App() {
                     aplicando princípios de UX/UI, mobile-first, clean code e componentização,
                     com foco em performance, usabilidade e clareza visual.
                   </p>
-
+                  <br />
                   <strong>Back-End</strong>
 
                   <p>
@@ -384,7 +386,7 @@ function App() {
                     utilizando Sequelize como ORM para integração com PostgreSQL,
                     além de MongoDB para dados não relacionais.
                   </p>
-
+                  <br />
                   <strong>Experiência</strong>
 
                   <p>
@@ -392,6 +394,7 @@ function App() {
                     responsividade e manutenção por meio da criação de componentes reutilizáveis
                     e fluxos de deploy otimizados com Git, GitHub e Netlify.
                   </p>
+                  <br />
                 </>
               )}
             </AboutText>
@@ -407,8 +410,8 @@ function App() {
             <ProjectButtons style={{ marginTop: '1.5rem' }}>
               <ProjectButton
                 as="a"
-                href={`${import.meta.env.BASE_URL}Bruno-Alves-Ferreira_Desenvolvedor-Web.pdf`}
-                download="Bruno-Alves-Ferreira_CV.pdf"
+                href={`${import.meta.env.BASE_URL}Bruno_Alves_Ferreira_Fullstack_Developer.pdf`}
+                download="Bruno_Alves_Ferreira_Fullstack_Developer.pdf"
                 type="application/pdf"
                 style={{ fontSize: '1rem', minWidth: '190px' }}
               >
